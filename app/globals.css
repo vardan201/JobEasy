@@ -122,5 +122,20 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* Subtle dot-grid overlay */
+    background-image:
+      radial-gradient(circle, oklch(0.65 0.15 165 / 0.06) 1px, transparent 1px);
+    background-size: 30px 30px;
   }
 }
+
+/* Slow spinning glow for decorative elements */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+

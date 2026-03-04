@@ -1,4 +1,7 @@
-import { FileText, FileSearch, ImageIcon, Bell, Sparkles, Shield } from "lucide-react"
+"use client"
+
+import { FileText, FileSearch, Briefcase, Bell, Sparkles, Shield } from "lucide-react"
+import { motion } from "framer-motion"
 import { FeatureCard } from "./feature-card"
 
 const features = [
@@ -16,8 +19,8 @@ const features = [
   },
   {
     title: "Interview Prep",
-    description: "Practice interviews with AI-driven questions.",
-    icon: ImageIcon,
+    description: "Practice interviews with AI-driven questions and real-time feedback.",
+    icon: Briefcase,
     stats: "AI-powered",
   },
   {
@@ -42,17 +45,26 @@ const features = [
 
 export function FeatureGrid() {
   return (
-    <section className="px-4 py-16">
+    <section className="px-4 py-20">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-12">
+        {/* Section header */}
+        <motion.div
+          className="text-center mb-14"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
           <h2 className="text-3xl font-bold text-foreground mb-4">Everything You Need to Succeed</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             A comprehensive suite of AI-powered tools designed to accelerate your career growth.
           </p>
-        </div>
+        </motion.div>
+
+        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {features.map((feature) => (
-            <FeatureCard key={feature.title} {...feature} />
+          {features.map((feature, i) => (
+            <FeatureCard key={feature.title} {...feature} index={i} />
           ))}
         </div>
       </div>
