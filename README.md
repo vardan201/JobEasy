@@ -1,4 +1,4 @@
-# 📄 ResumeIQ - Comprehensive AI career Suite
+# 📄 JobEasy - Comprehensive AI career Suite
 
 ResumeIQ is a cutting-edge, AI-powered career assistant designed to help professionals optimize their resumes, analyze skill gaps, and master mock interviews. Built with a modern tech stack, it provides a seamless experience for job seekers to land their dream roles.
 
